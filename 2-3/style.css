@@ -1,0 +1,457 @@
+/* Reset и основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+body {
+    background-color: #E8E6DE;
+    color: #1A1A1A;
+    min-height: 100vh;
+}
+
+/* Общие стили */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    position: relative; /* Относительное позиционирование */
+    top: 20px; /* Сдвиг вниз на 20px */
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #FF6B8B;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ff5377;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(245, 245, 245, 0.95); /* Светло-серый фон для контраста */
+    border-bottom: 1px solid #ddd; /* Разделительная линия */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.logo {
+    display: flex;
+    font-family: 'Book Antiqua';
+    align-items: center;
+    text-decoration: none;
+    color: #333; /* Темный цвет для акцента */
+    font-size: 1.3rem; /* Увеличенный шрифт логотипа */
+    font-weight: 800; /* Небольшое выделение жирностью */
+}
+
+.logo img {
+    height: 55px; /* Слегка уменьшенный размер логотипа */
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    font-family: 'Georgia', serif;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem; /* Увеличенный шрифт навигации */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav a:hover {
+    color: #FF6B8B; /* Цвет акцента при наведении */
+    background-color: rgba(255, 107, 139, 0.1); /* Фон подсветки при наведении */
+}
+
+/* Главная страница */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    margin-top: 2rem; /* Отступ сверху для визуального разделения */
+}
+
+.main-images {
+    display: flex;
+    justify-content: center; /* Выравниваем изображения по центру */
+    gap: 1rem; /* Отступ между изображениями */
+}
+
+.thumbnail {
+    width: 670px; /* Ширина для изображений Image 2 и Image 4 */
+    height: 425px; /* Высота для изображений Image 2 и Image 4 */
+    object-fit: cover; /* Обеспечиваем сохранение пропорций изображения */
+    border-radius: 5px; /* Добавление скруглений */
+}
+
+.center-image {
+    width: 836px; /* Устанавливаем ширину для Image 3 */
+    height: 470px; /* Устанавливаем высоту для Image 3 */
+    object-fit: cover; /* Обеспечиваем сохранение пропорций изображения */
+    margin-top: 1rem; /* Отступ сверху для размещения изображения */
+}
+
+/* Секция "WHAT CAN WE OFFER" */
+.offer-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.1);
+}
+
+.offer-title {
+    font-weight: 800;
+    font-family: 'Inter';
+    color: #1A1A1A; 
+    min-width: 176px;
+}
+
+.offer-text {
+    color: #1A1A1A;
+    line-height: 1.6;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Страница со статьями */
+.articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.articles-title {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    font-family: 'Palatino Linotype';
+    font-weight: 500;
+    border: 1px solid #1A1A1A;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: #C8D1C0;
+}
+/* Контейнер для карточек автомобилей */
+.cars-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между карточками */
+    justify-content: center; /* Выравнивание карточек по центру */
+}
+
+/* Карточка автомобиля */
+.car-card {
+    background-color: #E1E4D9; /* Цвет фона */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Карточка будет вертикальной */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+/* Изображение автомобиля */
+.car-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    align-self: flex-start; /* Выравнивание изображения по верху карточки */
+    margin-bottom: 15px; /* Увеличиваем отступ снизу для изображения */
+    position: relative;
+    top: -5px; /* Мелкий сдвиг вверх для выравнивания */
+}
+
+/* Контейнер для текста в карточке */
+.car-info {
+    padding: 10px 15px; /* Меньше отступов, чтобы текст не был слишком удален от краев */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Выравнивание текста по центру */
+    height: 100%; /* Занимает всю высоту карточки */
+}
+
+/* Название автомобиля */
+.car-name {
+    font-size: 1.1rem; /* Немного уменьшаем размер */
+    font-weight: bold;
+    margin-bottom: 5px; /* Уменьшаем отступ снизу */
+    text-align: center;
+    color: #000; /* Цвет для улучшения контраста */
+}
+
+/* Год выпуска */
+.car-year {
+    font-size: 1rem;
+    color: #4CAF50; /* Зеленый для года выпуска */
+    margin-bottom: 5px; /* Снижаем отступ */
+    text-align: center;
+}
+
+/* Местоположение */
+.car-location {
+    font-size: 0.9rem; /* Немного уменьшаем шрифт для местоположения */
+    color: #777; /* Серый цвет для текста */
+    text-align: center;
+}
+
+/* Эффект наведения на карточку */
+.car-card:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Детальная страница */
+/* Первый абзац */
+#car-paragraph-1 {
+    max-width: 1200px; /* Ширина для первого абзаца */
+    margin: 0 auto 45px auto; /* Центрирование и отступ снизу */
+    text-align: justify; /* Выровнять текст по ширине */
+}
+
+/* Второй и третий абзацы */
+#car-paragraph-2 {
+    max-width: 800px; /* Ширина для второго и третьего абзацев */
+    margin: 0 auto; /* Центрирование */
+    text-align: justify;
+}
+
+#car-paragraph-3 {
+    text-align: left;
+    max-width: 1000px; /* Ширина для второго и третьего абзацев */
+}
+
+/* Контейнер для всех деталей */
+.car-detail {
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Центрируем заголовки */
+    margin-top: 30px;
+}
+
+/* Заголовок автомобиля */
+.car-detail h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+/* Контейнер для контента */
+.car-content {
+    display: flex;
+    flex-direction: column; /* Колонка для контента */
+    gap: 50px; /* Пространство между блоками */
+}
+
+/* Центрирование и отступ для текста */
+.car-content p {
+    font-family: 'Kite One', sans-serif;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Настройка для строки: текст + изображения */
+.row {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Центрируем текст и изображения по вертикали */
+    justify-content: space-between; /* Равномерное расположение по горизонтали */
+}
+
+/* Контейнер для изображений */
+.row .images {
+    display: flex;
+    flex-direction: column; /* Колонка для изображений */
+    gap: 15px; /* Расстояние между изображениями */
+    justify-content: space-around; /* Расположение изображений */
+}
+
+/* Отступы для изображений второго абзаца */
+.row .images img:first-child {
+    align-self: flex-start; /* Перемещаем первое изображение вверх */
+}
+
+.row .images img:last-child {
+    align-self: flex-end; /* Перемещаем второе изображение вниз */
+}
+
+/* Настройка для третьей строки */
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse; /* Текст справа, изображение слева */
+    gap: 20px;
+    align-items: center;
+}
+
+/* Настройка изображений */
+.car-image {
+    max-width: 100%;
+    border-radius: 5px; /* Закругленные края */
+}
+
+/* Отступы между абзацами */
+#car-paragraph-1 {
+    margin-bottom: 50px;
+}
+
+#car-paragraph-2 {
+    margin-bottom: 30px;
+}
+
+#car-paragraph-3 {
+    margin-bottom: 30px;
+}
+
+
+/* Форма оплаты */
+.payment-form {
+    max-width: 600px;
+    margin: 4rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.payment-form h2 {
+    color: #5B4B8A;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #5B4B8A;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .car-content {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Прозрачная кнопка */
+.continue-button.btn-primary.transparent {
+    background-color: #e83e8c; /* Розовый цвет */
+    cursor: not-allowed;       /* Курсор "недоступно" */
+    color: rgba(255, 255, 255, 0.7); /* Прозрачный текст */
+    opacity: 0.5;              /* Эффект прозрачности */
+    transition: opacity 0.3s;  /* Плавный переход прозрачности */
+}
+
+/* Активная кнопка */
+.continue-button.btn-primary {
+    background-color: #e83e8c; /* Розовый цвет */
+    color: white;              /* Белый текст */
+    cursor: pointer;          /* Указатель нажатия */
+    opacity: 1;                /* Полностью видимая */
+    transition: background-color 0.3s, opacity 0.3s; /* Плавный переход */
+}
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 3s;
+}
+
+/* Анимация появления и исчезновения */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
